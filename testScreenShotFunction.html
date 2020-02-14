@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Test html screenshot
+		</title>
+		<style>
+		#screenshot{
+			background-color: red;
+			color: black;
+			width:600px;
+			height:800px;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="screenshot">
+			Please work much begging
+		</div>
+		<button onclick="screenshot()" id="btn" >
+			Take a Picture
+		</button>
+	</body>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+		<script>
+			function screenshot(){
+				alert("hello")
+				var screenshot = document.querySelector("#screenshot");
+				html2canvas(screenshot,{
+					onrendered:function(canvas){
+						document.body.appendChild(canvas);
+					},
+					
+					height:800,
+					width:600
+				})
+			}
+		</script>
+</html>
